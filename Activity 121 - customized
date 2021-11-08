@@ -12,7 +12,7 @@ timer = 30
 counter_interval = 1000   
 timer_up = False
 colors = ["red", "orange", "yellow", "green", "blue", "purple", "black", "pink", "grey"]
-sizes = 10
+sizes = [1.5, 1.75, 2, 2.25, 2.5, 2.75, 3]
 
 #-----initialize turtle-----
 spot = trtl.Turtle()
@@ -49,10 +49,8 @@ def change_color():
   spot.fillcolor(the_color)
   spot.stamp
 def change_size():
-  global sizes
-  sizes -= 1
-  spot.shapesize(sizes)
-  spot.stamp
+  new_size = rand.choice(sizes)
+  spot.shapesize(new_size)
 def countdown():
   global timer, timer_up
   counter.clear()
